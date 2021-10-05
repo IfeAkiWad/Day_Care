@@ -57,3 +57,53 @@ Migrating to CreateChildren (20211005192055)
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChildren (20211005192055)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "children"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211005192055"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChildren (20211005192055)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "children" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "birthday" date, "emergency_contact" varchar, "phone" integer, "allergy" varchar, "daycare_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211005192055"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDaycare Create (0.4ms)[0m  [1m[32mINSERT INTO "daycares" ("name", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sunny Day Care"], ["address", "100 W 113th St. New York, NY 10026"], ["created_at", "2021-10-05 20:08:54.454704"], ["updated_at", "2021-10-05 20:08:54.454704"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDaycare Create (0.3ms)[0m  [1m[32mINSERT INTO "daycares" ("name", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tator Totts Academy"], ["address", "1999 Clark St. Victorville, CA 92392"], ["created_at", "2021-10-05 20:08:54.458628"], ["updated_at", "2021-10-05 20:08:54.458628"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" WHERE "daycares"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChild Create (0.3ms)[0m  [1m[32mINSERT INTO "children" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mario Lopez"], ["birthday", "2018-11-03"], ["emergency_contact", "Leslie Lopez"], ["phone", 2125557894], ["allergy", "none"], ["daycare_id", 1], ["created_at", "2021-10-05 20:08:54.496276"], ["updated_at", "2021-10-05 20:08:54.496276"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" WHERE "daycares"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChild Create (0.3ms)[0m  [1m[32mINSERT INTO "children" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Raynese Potter"], ["birthday", "2019-05-12"], ["emergency_contact", "Mark Potter"], ["phone", 7185553256], ["allergy", "peanut"], ["daycare_id", 1], ["created_at", "2021-10-05 20:08:54.501416"], ["updated_at", "2021-10-05 20:08:54.501416"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" WHERE "daycares"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChild Create (0.3ms)[0m  [1m[32mINSERT INTO "children" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tony Giacomo"], ["birthday", "2018-02-03"], ["emergency_contact", "Maria Gandolfini"], ["phone", 2125551469], ["allergy", "none"], ["daycare_id", 1], ["created_at", "2021-10-05 20:08:54.506129"], ["updated_at", "2021-10-05 20:08:54.506129"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" WHERE "daycares"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChild Create (0.3ms)[0m  [1m[32mINSERT INTO "children" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cynthia Moreno"], ["birthday", "2019-04-19"], ["emergency_contact", "Carla De Miguel"], ["phone", 2125553369], ["allergy", "none"], ["daycare_id", 1], ["created_at", "2021-10-05 20:08:54.510553"], ["updated_at", "2021-10-05 20:08:54.510553"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mChild Load (0.3ms)[0m  [1m[34mSELECT "children".* FROM "children"[0m

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_10_05_192055) do
     t.string "name"
     t.date "birthday"
     t.string "emergency_contact"
+    t.integer "phone"
     t.string "allergy"
     t.integer "daycare_id"
     t.datetime "created_at", precision: 6, null: false

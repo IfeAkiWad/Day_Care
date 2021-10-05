@@ -4,6 +4,7 @@ class CreateChildren < ActiveRecord::Migration[6.0]
       t.string :name
       t.date :birthday
       t.string :emergency_contact
+      t.integer :phone
       t.string :allergy
       t.integer :daycare_id
 
