@@ -1,4 +1,5 @@
 class ToddlersController < ApplicationController
+  before_action :set_daycare
   before_action :set_toddler, only: [:show, :update, :destroy]
 
   # GET /toddlers
@@ -15,7 +16,7 @@ class ToddlersController < ApplicationController
 
   # POST /toddlers
   def create
-    @toddler = Toddler.new(toddler_params)
+    @toddler = @daycare.toddlers.new(toddler_params)
 
     if @toddler.save
       render json: @toddler, status: :created, location: @toddler
@@ -44,8 +45,11 @@ class ToddlersController < ApplicationController
       @toddler = Toddler.find(params[:id])
     end
 
+    def set_daycare
+      @daycare = Daycare.find(params[:daycare_id])
+
     # Only allow a trusted parameter "white list" through.
     def toddler_params
-      params.require(:toddler).permit(:name, :birthday, :eemergency_contact, :phone, :allergy, :daycare_id)
+      params.require(:toddler).permit(:name, :birthday, :emergency_contact, :phone, :allergy, :daycare_id)
     end
 end

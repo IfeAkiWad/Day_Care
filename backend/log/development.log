@@ -517,3 +517,25 @@ Processing by DaycaresController#index as HTML
 Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 3701)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToddler Create (0.7ms)[0m  [1m[32mINSERT INTO "toddlers" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cynthia Gomez"], ["birthday", "2019-04-19"], ["emergency_contact", "Carla De Miguel"], ["phone", 2125553369], ["allergy", "none"], ["daycare_id", 1], ["created_at", "2021-10-05 22:26:15.358639"], ["updated_at", "2021-10-05 22:26:15.358639"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" ORDER BY "toddlers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" ORDER BY "toddlers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mToddler Destroy (1.7ms)[0m  [1m[31mDELETE FROM "toddlers" WHERE "toddlers"."id" = ?[0m  [["id", 5]]
+  [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+Started GET "/daycares" for ::1 at 2021-10-05 17:33:40 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DaycaresController#index as HTML
+  [1m[36mDaycare Load (0.8ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.8ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 2]]
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+Completed 200 OK in 72ms (Views: 57.8ms | ActiveRecord: 4.5ms | Allocations: 16835)
+
+
