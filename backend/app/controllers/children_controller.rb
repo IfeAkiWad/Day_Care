@@ -1,5 +1,5 @@
 class ChildrenController < ApplicationController
-  before_action :set
+  before_action :set_daycare
   before_action :set_child, only: [:show, :update, :destroy]
 
   # GET /children
@@ -45,8 +45,12 @@ class ChildrenController < ApplicationController
       @child = Child.find(params[:id])
     end
 
+    def set_daycare 
+      @daycare = Daycare.find(params[:daycare_id])
+    end
+
     # Only allow a trusted parameter "white list" through.
     def child_params
-      params.require(:child).permit(:name, :birthday, :gaurdian, :allergy)
+      params.require(:child).permit(:name, :birthday, :emergeny_contact, :phone, :allergy, :daycare_id)
     end
 end
