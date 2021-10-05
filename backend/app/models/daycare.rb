@@ -1,3 +1,3 @@
 class Daycare < ApplicationRecord
-    has_many :children
+    has_many :toddlers
 end
