@@ -5,6 +5,7 @@ class CreateChildren < ActiveRecord::Migration[6.0]
       t.date :birthday
       t.string :gaurdian
       t.string :allergy
+      t.integer :daycare_id
 
       t.timestamps
     end
