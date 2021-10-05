@@ -3,7 +3,7 @@ class CreateChildren < ActiveRecord::Migration[6.0]
     create_table :children do |t|
       t.string :name
       t.date :birthday
-      t.string :gaurdian
+      t.string :emergency_contact
       t.string :allergy
       t.integer :daycare_id
 

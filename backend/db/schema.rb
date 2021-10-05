@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_10_05_192055) do
   create_table "children", force: :cascade do |t|
     t.string "name"
     t.date "birthday"
-    t.string "gaurdian"
+    t.string "emergency_contact"
     t.string "allergy"
     t.integer "daycare_id"
     t.datetime "created_at", precision: 6, null: false
