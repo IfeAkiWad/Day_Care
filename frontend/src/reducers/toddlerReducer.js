@@ -2,7 +2,9 @@ const toddlerReducer = (state = {toddlers: []}, action) => {
     switch (action.type) {
         case 'LOADING_TODDLERS':
             return {
-            ...state, toddlers: [...state.toddlers], loading: true
+            ...state, 
+            toddlers: [...state.toddlers], 
+            loading: true
         }
         case 'ADD_TODDLER':
             return {
