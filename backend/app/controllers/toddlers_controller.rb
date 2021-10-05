@@ -46,7 +46,8 @@ class ToddlersController < ApplicationController
     end
 
     def set_daycare
-      @daycare = Daycare.find(params[:daycare_id])
+      @daycare = Daycare.find_by(params[:daycare_id])
+    end
 
     # Only allow a trusted parameter "white list" through.
     def toddler_params
