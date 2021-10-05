@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :toddlers
   resources :daycares do
     resources :children
   end

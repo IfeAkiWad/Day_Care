@@ -1,6 +1,6 @@
-class CreateChildren < ActiveRecord::Migration[6.0]
+class CreateToddlers < ActiveRecord::Migration[6.0]
   def change
-    create_table :children do |t|
+    create_table :toddlers do |t|
       t.string :name
       t.date :birthday
       t.string :emergency_contact

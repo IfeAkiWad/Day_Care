@@ -282,3 +282,238 @@ Processing by DaycaresController#index as HTML
 Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.7ms | Allocations: 4237)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChildren (20211005192055)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "children"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211005192055"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/daycares" for ::1 at 2021-10-05 16:53:08 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.4.1) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.4.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.4.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToddlers (20211005192055)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDaycares (20211005191215)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "daycares"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211005191215"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDaycares (20211005191215)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "daycares" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211005191215"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateToddlers (20211005192055)
+Started GET "/daycares" for ::1 at 2021-10-05 16:56:41 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.4.1) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.4.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.4.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDaycares (20211005191215)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "daycares" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211005191215"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateToddlers (20211005192055)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToddlers (20211005192055)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToddlers (20211005192055)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToddlers (20211005221546)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "toddlers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "birthday" date, "remergency_contact" varchar, "phone" integer, "allergy" varchar, "daycare_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211005221546"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-10-05 22:16:51.032696"], ["updated_at", "2021-10-05 22:16:51.032696"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToddlers (20211005221546)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "toddlers"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211005221546"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToddlers (20211005221546)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "toddlers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "birthday" date, "emergency_contact" varchar, "phone" integer, "allergy" varchar, "daycare_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211005221546"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/daycares" for ::1 at 2021-10-05 17:18:32 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DaycaresController#index as HTML
+  [1m[36mDaycare Load (0.7ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 3.4ms | ActiveRecord: 1.0ms | Allocations: 2393)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDaycare Create (0.4ms)[0m  [1m[32mINSERT INTO "daycares" ("name", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sunny Day Care"], ["address", "100 W 113th St. New York, NY 10026"], ["created_at", "2021-10-05 22:18:56.491604"], ["updated_at", "2021-10-05 22:18:56.491604"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDaycare Create (0.4ms)[0m  [1m[32mINSERT INTO "daycares" ("name", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tator Totts Academy"], ["address", "1999 Clark St. Victorville, CA 92392"], ["created_at", "2021-10-05 22:18:56.495514"], ["updated_at", "2021-10-05 22:18:56.495514"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToddler Create (0.3ms)[0m  [1m[32mINSERT INTO "toddlers" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mario Lopez"], ["birthday", "2018-11-03"], ["emergency_contact", "Leslie Lopez"], ["phone", 2125557894], ["allergy", "none"], ["daycare_id", 1], ["created_at", "2021-10-05 22:18:56.507126"], ["updated_at", "2021-10-05 22:18:56.507126"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToddler Create (0.3ms)[0m  [1m[32mINSERT INTO "toddlers" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Raynese Potter"], ["birthday", "2019-05-12"], ["emergency_contact", "Mark Potter"], ["phone", 7185553256], ["allergy", "peanut"], ["daycare_id", 1], ["created_at", "2021-10-05 22:18:56.511182"], ["updated_at", "2021-10-05 22:18:56.511182"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToddler Create (0.3ms)[0m  [1m[32mINSERT INTO "toddlers" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tony Giacomo"], ["birthday", "2018-02-03"], ["emergency_contact", "Maria Gandolfini"], ["phone", 2125551469], ["allergy", "none"], ["daycare_id", 1], ["created_at", "2021-10-05 22:18:56.514713"], ["updated_at", "2021-10-05 22:18:56.514713"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToddler Create (0.3ms)[0m  [1m[32mINSERT INTO "toddlers" ("name", "birthday", "emergency_contact", "phone", "allergy", "daycare_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cynthia Moreno"], ["birthday", "2019-04-19"], ["emergency_contact", "Carla De Miguel"], ["phone", 2125553369], ["allergy", "none"], ["daycare_id", 1], ["created_at", "2021-10-05 22:18:56.518010"], ["updated_at", "2021-10-05 22:18:56.518010"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/daycares" for ::1 at 2021-10-05 17:19:02 -0500
+Processing by DaycaresController#index as HTML
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 2]]
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 1.8ms | Allocations: 16740)
+
+
+Started GET "/daycares" for ::1 at 2021-10-05 17:19:18 -0500
+Processing by DaycaresController#index as HTML
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 2]]
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 3701)
+
+
