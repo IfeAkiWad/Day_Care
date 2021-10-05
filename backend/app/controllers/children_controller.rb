@@ -1,48 +1,48 @@
-class ChildrenController < ApplicationController
+class ToddlersController < ApplicationController
   before_action :set_daycare
-  before_action :set_child, only: [:show, :update, :destroy]
+  before_action :set_toddler, only: [:show, :update, :destroy]
 
-  # GET /children
+  # GET /toddlers
   def index
-    @children = Child.all
+    @toddlers = Toddler.all
 
-    render json: @children
+    render json: @toddlers
   end
 
-  # GET /children/1
+  # GET /toddlers/1
   def show
-    render json: @child
+    render json: @toddler
   end
 
-  # POST /children
+  # POST /toddlers
   def create
-    @child = Child.new(child_params)
+    @toddler = toddler.new(toddler_params)
 
-    if @child.save
-      render json: @child, status: :created, location: @child
+    if @toddler.save
+      render json: @toddler, status: :created, location: @toddler
     else
-      render json: @child.errors, status: :unprocessable_entity
+      render json: @toddler.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /children/1
+  # PATCH/PUT /toddlers/1
   def update
-    if @child.update(child_params)
-      render json: @child
+    if @toddler.update(toddler_params)
+      render json: @toddler
     else
-      render json: @child.errors, status: :unprocessable_entity
+      render json: @toddler.errors, status: :unprocessable_entity
     end
   end
 
-  # DELETE /children/1
+  # DELETE /toddlers/1
   def destroy
-    @child.destroy
+    @toddler.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_child
-      @child = Child.find(params[:id])
+    def set_toddler
+      @toddler = toddler.find(params[:id])
     end
 
     def set_daycare 
@@ -50,7 +50,7 @@ class ChildrenController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def child_params
-      params.require(:child).permit(:name, :birthday, :emergeny_contact, :phone, :allergy, :daycare_id)
+    def toddler_params
+      params.require(:toddler).permit(:name, :birthday, :emergeny_contact, :phone, :allergy, :daycare_id)
     end
 end
