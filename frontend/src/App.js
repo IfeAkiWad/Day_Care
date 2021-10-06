@@ -4,6 +4,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import { fetchDaycares } from './actions/daycareActions';
 import { fetchToddlers } from './actions/toddlerActions';
+import DaycareContainer from './containers/DaycareContainer';
 
 class App extends Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <div>
         App.js
+        <DaycareContainer />
       </div>
     )
   }

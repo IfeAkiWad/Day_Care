@@ -19,7 +19,7 @@ export const submitToddlers = (toddler, daycareId) => {
 export const fetchToddlers = (daycareId) => {
     return (dispatch) => {
       dispatch({ type: 'LOADING_TODDLERS'})
-      fetch(`http://localhost:3000/daycares/${daycareId}/toddlers`)
+      fetch('http://localhost:3000/toddlers')
       .then(response => {
         return response.json()
       })
