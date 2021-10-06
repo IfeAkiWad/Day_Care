@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './App.css';
 
 import { connect } from 'react-redux'
+import { fetchDaycares } from './actions/daycareActions';
+import { fetchToddlers } from './actions/toddlerActions';
 
-function App() {
-  return (
-    <div className="App">
-     in App.js
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchDaycares()
+    this.props.fetchToddlers()
+  }
+
+  render() {
+    return (
+      <div>
+        App.js
+      </div>
+    )
+  }
 }
 
-export default (null, { })(App);
+export default connect(null, { fetchDaycares, fetchToddlers })(App)
+
