@@ -1,3 +1,5 @@
+
+
 const toddlerReducer = (state = {toddlers: []}, action) => {
     switch (action.type) {
         case 'LOADING_TODDLERS':
@@ -14,9 +16,9 @@ const toddlerReducer = (state = {toddlers: []}, action) => {
             }
             // return {...state, toddlers: [...state.toddlers, action.toddler]} 
         case "REMOVE_TODDLER":
-            const newtoddlers = state.toddlers.filter(toddler => toddler.id !== action.id)
-            return {...state, toddlers: newtoddlers}
-            default:
+            const deleteToddlers = state.toddlers.filter(toddler => toddler.id !== action.id)
+            return {...state, toddlers: deleteToddlers}
+        default:
             return state;
     }
 }

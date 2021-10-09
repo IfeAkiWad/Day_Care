@@ -3,10 +3,12 @@ import Welcome from '../components/Welcome';
 import { connect } from 'react-redux';
 import Home from '../components/homecomp/Home';
 import DaycareList  from '../components/daycarecomp/DaycareList';
+import DaycareForm from '../components/daycarecomp/DaycareForm';
 
 class DaycareContainer extends Component {
     render() {
         console.log(this.props.allDaycares, "Daycare Container")
+        let daycare = this.props.allDaycares
         return (
             
 
@@ -16,6 +18,10 @@ class DaycareContainer extends Component {
                     return <Home key={daycare.id} getDaycare={daycare} />
                 })}
                 <DaycareList getDaycares={this.props.allDaycares}/>
+                {daycare.map(d => {
+                    <DaycareForm />
+                })}
+                
             </div>
         )
     }
