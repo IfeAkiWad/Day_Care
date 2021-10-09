@@ -16,7 +16,7 @@ export const submitToddlers = (toddler, daycareId) => {
     }  
 }
 
-export const fetchToddlers = (daycareId) => {
+export const fetchToddlers = () => {
     return (dispatch) => {
       dispatch({ type: 'LOADING_TODDLERS'})
       fetch('http://localhost:3000/toddlers')
