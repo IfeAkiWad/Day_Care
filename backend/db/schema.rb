@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_10_05_221546) do
   create_table "toddlers", force: :cascade do |t|
     t.string "name"
     t.date "birthday"
-    t.string "emergency_contact"
+    t.string "contact"
     t.integer "phone"
     t.string "allergy"
     t.integer "daycare_id"
