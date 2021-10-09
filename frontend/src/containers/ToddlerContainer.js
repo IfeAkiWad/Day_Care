@@ -27,7 +27,7 @@ class ToddlerContainer extends Component {
             <div>
                 <br />
                 <h4>Student Directory</h4>
-                <input onChange={this.handleOnChange} value={this.state.value} placeholder="Search Student..."/>
+                <input onChange={this.handleOnChange} value={this.state.value} placeholder="Search Student..."/><br />
                 {filteredToddler.map( toddler => {
                     return <ToddlerFilter delete={this.props.delete} key={toddler.id} toddler={toddler} />
                 })}

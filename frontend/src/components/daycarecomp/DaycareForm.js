@@ -8,7 +8,7 @@ class DaycareForm extends Component {
         this.state = {
             name: '',
             birthday: '',
-            emergencyContact: '',
+            contact: '',
             phone: '',
             allergy: ''
         }
@@ -21,19 +21,27 @@ class DaycareForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
+        this.props.submitToddlers(this.state, this.props.daycare.id)
         this.setState({[event.target.name]: ''})
     }
 
     render() {
+        console.log(this.props.daycare, "Day care id")
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <br />
+                    {this.props.daycareId}
                     <h4>New Student</h4>
-                    <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} placeholder="Name..." /><br />
-                    <input type="text" name="birthday" onChange={this.handleOnChange} value={this.state.birthday} placeholder="Birthday..." /><br />
-                    <input type="text" name="emergencyContact" onChange={this.handleOnChange} value={this.state.emergencyContact} placeholder="Emergency Contact..." /><br />
-                    <input type="text" name="phone" onChange={this.handleOnChange} value={this.state.phone} placeholder="Phone..." /><br />
+                    <label><u>Name</u>: </label>
+                    <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} placeholder="First name, last name..." /><br />
+                    <label><u>Birthday</u>: </label>
+                    <input type="text" name="birthday" onChange={this.handleOnChange} value={this.state.birthday} placeholder="YYYY-MM-DD..." /><br />
+                    <label><u>Emergency Contact</u>: </label>
+                    <input type="text" name="emergencyContact" onChange={this.handleOnChange} value={this.state.contact} placeholder="First name, last name..." /><br />
+                    <label><u>Phone</u>: </label>
+                    <input type="text" name="phone" onChange={this.handleOnChange} value={this.state.phone} placeholder="##########" /><br />
+                    <label><u>Allergy</u>: </label>
                     <input type="text" name="allergy" onChange={this.handleOnChange} value={this.state.allergy} placeholder="Allergy..." /><br /><br />
                     <input type="submit" value="Submit"/>
                 </form>
