@@ -8,7 +8,7 @@ import DaycareList  from '../components/daycarecomp/DaycareList';
 class DaycareContainer extends Component {
     render() {
         console.log(this.props.allDaycares, "Daycare Container")
-        let daycare = this.props.allDaycares
+        // let daycare = this.props.allDaycares
         return (
             
 

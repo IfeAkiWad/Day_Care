@@ -10,6 +10,7 @@ export const submitToddlers = (toddler, daycareId) => {
       })
       .then(response => response.json())
       .then(toddler => {
+        // debugger
         console.log(toddler, "submitting toddler")
         dispatch({ type: 'ADD_TODDLERS', payload: toddler })
       })
@@ -25,7 +26,7 @@ export const fetchToddlers = () => {
       })
       .then(data => {
         console.log(data, 'fetching toddlers')
-        dispatch({ type: 'ADD_TODDLERS', payload: data })
+        dispatch({ type: 'ADD_TODDLERS', toddlers: data })
       })
     }
 }
