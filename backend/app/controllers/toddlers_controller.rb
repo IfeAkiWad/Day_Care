@@ -51,6 +51,6 @@ class ToddlersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def toddler_params
-      params.require(:toddler).permit(:name, :birthday, :emergency_contact, :phone, :allergy, :daycare_id)
+      params.require(:toddler).permit(:name, :birthday, :contact, :phone, :allergy, :daycare_id)
     end
 end
