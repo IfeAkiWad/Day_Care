@@ -4,11 +4,7 @@ export default class ToddlerList extends Component {
     render() {
         console.log(this.props, "ToddlerList")
         const toddler = this.props.toddlerDetail
-        // let filteredToddler = toddler.filter( toddler => {
-        //     if(this.state.value !== '') 
-        //         {return toddler.name.toLowerCase().includes(this.state.value)
-        //     }
-        // })
+        
         return (
             <div>
                 <br />

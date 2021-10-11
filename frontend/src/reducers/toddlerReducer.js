@@ -1,5 +1,3 @@
-
-
 const toddlerReducer = (state = {toddlers: []}, action) => {
     switch (action.type) {
         case 'LOADING_TODDLERS':

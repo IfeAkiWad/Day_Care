@@ -36,14 +36,6 @@ class ToddlerContainer extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     // console.log(state)
-//     return {
-//         allDaycares: state.daycareReducer.daycares,
-//         loading: state.loading
-//     }
-// }
-
 const mapDispatchToProps = (dispatch) => {
     return {
         delete: (toddler) => dispatch({ type: "REMOVE_TODO", payload: toddler }),

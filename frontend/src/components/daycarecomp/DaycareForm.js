@@ -21,21 +21,24 @@ class DaycareForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
-        // let compareId = if ()
-        debugger
-        this.props.submitToddlers(this.state, this.props.daycare.id)
-        // debugger
-        this.setState({[event.target.name]: ''})
+        let sunnyDayId = this.props.daycare.id = '1'
+        let tatorTottsId = this.props.daycare.id = '2'
+        this.props.submitToddlers(this.state, sunnyDayId, tatorTottsId)
+        this.setState({
+            name: '',
+            birthday: '',
+            contact: '',
+            phone: '',
+            allergy: ''
+        })
     }
 
     render() {
-        console.log(this.props.daycare, "Day care id")
-        console.log(this.props.getToddlers, "daycare_id")
+        console.log(this.props.daycare, "Day care ID")
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <br />
-                    {this.props.daycare.id}
                     <h4>New Student</h4>
                     <label><u>Name</u>: </label>
                     <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} placeholder="First name, last name..." required /><br />
@@ -47,11 +50,6 @@ class DaycareForm extends Component {
                     <input type="text" name="phone" onChange={this.handleOnChange} value={this.state.phone} placeholder="##########" required /><br />
                     <label><u>Allergy</u>: </label>
                     <input type="text" name="allergy" onChange={this.handleOnChange} value={this.state.allergy} placeholder="Allergy..." required /><br /><br />
-                    <select name="daycare" id="daycare" required>
-                        <option name="daycare_id">Select Daycare</option>
-                        <option name="daycare_id" value={this.props.daycare.id}>Sunny Day Care</option>
-                        <option name="daycare_id" value={this.props.daycare.id}>Tator Totts Academy</option>                   
-                    </select>
                     <input type="submit" value="Submit"/>
                 </form>
                 
@@ -60,11 +58,4 @@ class DaycareForm extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-   return {
-        getToddlers: state.toddlers,
-        loading: state.loading
-   }
-}
-
-export default connect(mapStateToProps, { submitToddlers })(DaycareForm)
+export default connect( null, { submitToddlers })(DaycareForm)

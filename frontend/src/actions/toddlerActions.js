@@ -1,3 +1,17 @@
+export const fetchToddlers = () => {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_TODDLERS'})
+    fetch('http://localhost:3000/toddlers')
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      console.log(data, 'fetching toddlers')
+      dispatch({ type: 'ADD_TODDLERS', toddlers: data })
+    })
+  }
+}
+
 export const submitToddlers = (toddler, daycareId) => {
     return (dispatch) => {
       fetch(`http://localhost:3000/daycares/${daycareId}/toddlers`, {
@@ -17,16 +31,21 @@ export const submitToddlers = (toddler, daycareId) => {
     }  
 }
 
-export const fetchToddlers = () => {
-    return (dispatch) => {
-      dispatch({ type: 'LOADING_TODDLERS'})
-      fetch('http://localhost:3000/toddlers')
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        console.log(data, 'fetching toddlers')
-        dispatch({ type: 'ADD_TODDLERS', toddlers: data })
-      })
-    }
+export const deleteToddler = (toddler, toddlerId) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/toddlers/${toddlerId}`, {
+      method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },  
+        body: JSON.stringify(toddler)
+    })
+    .then(response => response.json())
+    .then(toddler => {
+      console.log(toddler, "deleting toddler")
+      dispatch({ type: 'DELETE_TODDLERS', payload: toddler })
+    })
+  }
 }
+

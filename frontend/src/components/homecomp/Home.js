@@ -1,6 +1,7 @@
 import React from 'react'
 import DaycareForm from '../daycarecomp/DaycareForm'
 
+
 const Home = (props) => {
     return (
         <div>

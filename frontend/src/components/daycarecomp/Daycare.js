@@ -4,15 +4,13 @@ import ToddlerList from '../toddlercomp/ToddlerList'
 
 export default class Daycare extends Component {
     render() {
-        const daycare = this.props.daycareDetail
 
         return (
             <div>
-                {daycare.name}
-                {daycare.toddlers.map( toddler => {
+                {this.props.getDaycare.toddlers.map( toddler => {
                     return <ToddlerList key={toddler.id} toddlerDetail={toddler} />
                 })}
-                <ToddlerContainer getToddlers={this.props.daycareDetail}/>
+                <ToddlerContainer getToddlers={this.props.getDaycare}/>
             </div>
         )
     }

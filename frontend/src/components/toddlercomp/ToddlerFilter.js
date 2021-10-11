@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-// import Toddler from './Toddler'
-// import { connect } from 'react-redux'
 
 class ToddlerFilter extends Component {
     render() {
@@ -27,10 +25,9 @@ class ToddlerFilter extends Component {
                                 <td>{toddler.phone}</td>
                                 <td>{toddler.allergy}</td>
                             </tr>
-                            <button onClick={() => this.props.delete(this.props.toddler)}>Delete</button>
                         </tbody>
                 </table>
-                {/* <Toddler toddlerShow={this.props.toddler}/> */}
+                <button onClick={() => this.props.delete(this.props.toddler)}>Delete</button>
             </div>
         )
     }
