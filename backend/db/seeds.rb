@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Daycare.create(name: 'Sunny Day Care', address: '100 W 113th St. New York, NY 10026')
 
-Daycare.create(name: 'Tator Totts Academy', address: '1999 Clark St. Victorville, CA 92392')
+# Daycare.create(name: 'Tator Totts Academy', address: '1999 Clark St. Victorville, CA 92392')
 
 
 Toddler.create(name: 'Mario Lopez', birthday: '2018-11-03', contact: 'Leslie Lopez', phone: 2125557894, allergy: 'none', daycare_id: 1)

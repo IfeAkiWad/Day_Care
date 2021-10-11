@@ -16,7 +16,8 @@ class ToddlersController < ApplicationController
 
   # POST /toddlers
   def create
-    @toddler = @daycare.toddlers.new(toddler_params)
+    @daycare = Daycare.find_by(params[:daycare_id])
+    @toddler = @daycare.toddlers.build(toddler_params)
 
     if @toddler.save
       render json: @toddler, status: :created, location: @toddler
