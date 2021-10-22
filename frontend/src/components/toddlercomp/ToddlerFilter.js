@@ -8,16 +8,19 @@ class ToddlerFilter extends Component {
 
     render() {
         console.log(this.props.toddler, "Toddler Filter")
+        console.log(this.props.toddlerId, "Toddler Filter")
+
         let toddler = this.props.toddler
-        const handleDelete = () => {
-            this.props.delete(toddler.id)
+        let toddlerId = this.props.toddlerId
+        const handleDelete = (toddler) => {
+            this.props.delete(toddler)
         }
         return (
-            <div>
+            <div id="Toddler-filter">
                 <br />
-                <table>
+                <table id={toddlerId} class="table">
                     <thead>
-                        <tr>
+                        <tr id={toddlerId}>
                             <th>Name</th>
                             <th>Birthday</th>
                             <th>Emergency Contact</th>
@@ -26,7 +29,7 @@ class ToddlerFilter extends Component {
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr id={toddlerId}>
                                 <td>{toddler.name}</td>
                                 <td>{toddler.birthday}</td>
                                 <td>{toddler.contact}</td>
@@ -35,7 +38,10 @@ class ToddlerFilter extends Component {
                             </tr>
                         </tbody>
                 </table>
-                <button onClick={() => handleDelete(toddler.id)}>Delete</button>
+                <div id="button">               
+                    <button onClick={() => handleDelete(toddler.id)}>Delete</button>
+                </div>
+                
             </div>
         )
     }

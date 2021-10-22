@@ -6,7 +6,7 @@ export default class Daycare extends Component {
     render() {
 
         return (
-            <div>
+            <div id="table-list">
                 {this.props.getDaycare.toddlers.map( toddler => {
                     return <ToddlerList key={toddler.id} toddlerDetail={toddler} />
                 })}

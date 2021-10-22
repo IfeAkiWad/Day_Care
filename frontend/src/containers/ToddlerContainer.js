@@ -25,15 +25,15 @@ class ToddlerContainer extends Component {
             }
         })
         return (
-            <div>
+            <div id="toddler-filter">
                 <br />
-                <h4>Student Directory</h4>
-                <input onChange={this.handleOnChange} value={this.state.value} placeholder="Search Student..."/><br />
-                {filteredToddler.map( toddler => 
-                    <div key={toddler.id}>
-                        <ToddlerFilter delete={this.props.deleteToddlers} key={toddler.id} toddler={toddler} />
-                    </div>
-                )}
+                <div id="directory">
+                <h4><u>Student Directory</u></h4>
+                <input id="directory-input" onChange={this.handleOnChange} value={this.state.value} placeholder="Search Student..."/><br />
+                </div>
+                {filteredToddler.map( toddler => {
+                    return <ToddlerFilter delete={this.props.deleteToddlers} key={toddler.id} toddler={toddler} toddlerId={toddler.id}/>
+                })}
             </div>
         )
     }

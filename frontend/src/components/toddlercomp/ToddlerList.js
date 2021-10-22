@@ -6,9 +6,9 @@ export default class ToddlerList extends Component {
         const toddler = this.props.toddlerDetail
         
         return (
-            <div>
+            <div id="table-list">
                 <br />
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Name</th>
