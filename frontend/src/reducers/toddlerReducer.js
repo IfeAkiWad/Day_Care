@@ -1,6 +1,3 @@
-import uuid from "uuid";
-
-
 const toddlerReducer = (state = {toddlers: []}, action) => {
     switch (action.type) {
         case 'LOADING_TODDLERS':
@@ -10,19 +7,14 @@ const toddlerReducer = (state = {toddlers: []}, action) => {
             loading: true
         }
         case 'ADD_TODDLER':
-            const thisToddler = {
-                id: uuid(),
-                text: action.payload.toddler,
-              };
             return {
-                // ...state,
-                // toddlers: action.toddlers,
-                toddlers: state.toddlers.concat(thisToddler),
+                ...state,
+                toddlers: action.toddlers,
                 loading: false
             }
             // return {...state, toddlers: [...state.toddlers, action.toddler]} 
         case "REMOVE_TODDLER":
-            let deleteToddlers = state.toddlers.filter(thisToddler => thisToddler.id !== action.id)
+            let deleteToddlers = state.toddlers.filter(toddler => toddler.id !== action.id)
             return {...state, toddlers: deleteToddlers}
         default:
             return state;

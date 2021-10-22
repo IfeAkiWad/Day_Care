@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { submitToddlers } from '../../actions/toddlerActions'
 
 class DaycareForm extends Component {
@@ -22,6 +23,7 @@ class DaycareForm extends Component {
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.submitToddlers(this.state, this.props.daycareId)
+        this.props.history.push('/toddlers', { state: this.state })
         this.setState({
             name: '',
             birthday: '',
@@ -30,11 +32,13 @@ class DaycareForm extends Component {
             allergy: ''
         })
         alert("Successfully submitted new student")
+        
     }
 
     render() {
         console.log(this.props.daycareId)
         console.log(this.props.toddler)
+        
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit} id="form">
@@ -59,4 +63,4 @@ class DaycareForm extends Component {
     }
 }
 
-export default connect( null, { submitToddlers })(DaycareForm)
+export default withRouter(connect( null, { submitToddlers })(DaycareForm))

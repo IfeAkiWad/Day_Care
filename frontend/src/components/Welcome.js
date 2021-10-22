@@ -13,7 +13,9 @@ const Welcome = () => {
                 <p>Tator Totts Academy<br />
                 170 Willoughby St, Brooklyn, NY 11201
                 </p>
+        
         </div>
+       
     )
 }
 
