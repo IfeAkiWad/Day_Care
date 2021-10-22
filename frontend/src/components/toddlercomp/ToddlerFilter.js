@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+// import { connect } from 'react-redux'
+// import { deleteToddlers } from '../../actions/toddlerActions'
 
 class ToddlerFilter extends Component {
+   
+
+
     render() {
         console.log(this.props.toddler, "Toddler Filter")
         let toddler = this.props.toddler
+        const handleDelete = () => {
+            this.props.delete(toddler.id)
+        }
         return (
             <div>
                 <br />
@@ -21,13 +29,13 @@ class ToddlerFilter extends Component {
                             <tr>
                                 <td>{toddler.name}</td>
                                 <td>{toddler.birthday}</td>
-                                <td>{toddler.emergency_contact}</td>
+                                <td>{toddler.contact}</td>
                                 <td>{toddler.phone}</td>
                                 <td>{toddler.allergy}</td>
                             </tr>
                         </tbody>
                 </table>
-                <button onClick={() => this.props.delete(this.props.toddler)}>Delete</button>
+                <button onClick={() => handleDelete(toddler.id)}>Delete</button>
             </div>
         )
     }

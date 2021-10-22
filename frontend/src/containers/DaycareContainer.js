@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import Welcome from '../components/Welcome';
 import { connect } from 'react-redux';
-import Home from '../components/homecomp/Home';
 import Daycare  from '../components/daycarecomp/Daycare';
 
 class DaycareContainer extends Component {
@@ -11,10 +9,6 @@ class DaycareContainer extends Component {
             
 
             <div>
-                <Welcome />
-                {this.props.sunnyDaycare.map ( daycare => {
-                    return <Home key={daycare.id} getDaycare={daycare} />
-                })}
                  {this.props.sunnyDaycare.map ( daycare => {
                     return <Daycare key={daycare.id} getDaycare={daycare} />
                 })}   

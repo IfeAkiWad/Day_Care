@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { deleteToddlers } from '../actions/toddlerActions'
 import ToddlerFilter from '../components/toddlercomp/ToddlerFilter'
 
 class ToddlerContainer extends Component {
@@ -28,18 +29,20 @@ class ToddlerContainer extends Component {
                 <br />
                 <h4>Student Directory</h4>
                 <input onChange={this.handleOnChange} value={this.state.value} placeholder="Search Student..."/><br />
-                {filteredToddler.map( toddler => {
-                    return <ToddlerFilter delete={this.props.delete} key={toddler.id} toddler={toddler} />
-                })}
+                {filteredToddler.map( toddler => 
+                    <div key={toddler.id}>
+                        <ToddlerFilter delete={this.props.deleteToddlers} key={toddler.id} toddler={toddler} />
+                    </div>
+                )}
             </div>
         )
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        delete: (toddler) => dispatch({ type: "REMOVE_TODO", payload: toddler }),
-      };
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         delete: (toddler) => dispatch({ type: "REMOVE_TODDLER", payload: toddler }),
+//       };
+// }
 
-export default connect(null, mapDispatchToProps)(ToddlerContainer)
+export default connect(null, { deleteToddlers })(ToddlerContainer)

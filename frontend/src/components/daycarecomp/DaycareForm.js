@@ -21,9 +21,7 @@ class DaycareForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
-        let sunnyDayId = this.props.daycare.id = '1'
-        let tatorTottsId = this.props.daycare.id = '2'
-        this.props.submitToddlers(this.state, sunnyDayId, tatorTottsId)
+        this.props.submitToddlers(this.state, this.props.daycareId)
         this.setState({
             name: '',
             birthday: '',
@@ -31,15 +29,18 @@ class DaycareForm extends Component {
             phone: '',
             allergy: ''
         })
+        alert("Successfully submitted new student")
     }
 
     render() {
-        console.log(this.props.daycare, "Day care ID")
+        console.log(this.props.daycareId)
+        console.log(this.props.toddler)
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <br />
-                    <h4>New Student</h4>
+                    <h4>New Student Form</h4>
+                    <p>Please fill out the form below:</p>
                     <label><u>Name</u>: </label>
                     <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} placeholder="First name, last name..." required /><br />
                     <label><u>Birthday</u>: </label>

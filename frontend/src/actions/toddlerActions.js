@@ -27,25 +27,30 @@ export const submitToddlers = (toddler, daycareId) => {
         // debugger
         console.log(toddler, "submitting toddler")
         dispatch({ type: 'ADD_TODDLERS', payload: toddler })
+        
       })
     }  
 }
 
-export const deleteToddler = (toddler, toddlerId) => {
+export const deleteToddlers = (toddlerId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/toddlers/${toddlerId}`, {
       method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },  
-        body: JSON.stringify(toddler)
+      headers: {
+        'Content-Type': 'application/json',
+        // 'Accept': 'application/json'
+    },
+    body: JSON.stringify()
     })
+  
     .then(response => response.json())
     .then(toddler => {
       console.log(toddler, "deleting toddler")
-      dispatch({ type: 'DELETE_TODDLERS', payload: toddler })
+      dispatch({ type: 'REMOVE_TODDLER', payload: toddler })                    
+      alert(toddler.message)
     })
+    // debugger
+
   }
 }
 

@@ -22,7 +22,7 @@ export default class ToddlerList extends Component {
                             <tr>
                                 <td>{toddler.name}</td>
                                 <td>{toddler.birthday}</td>
-                                <td>{toddler.emergency_contact}</td>
+                                <td>{toddler.contact}</td>
                                 <td>{toddler.phone}</td>
                                 <td>{toddler.allergy}</td>
                             </tr>
