@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { deleteToddlers } from '../actions/toddlerActions'
+// import { connect } from 'react-redux'
+// import { deleteToddlers } from '../actions/toddlerActions'
 import ToddlerFilter from '../components/toddlercomp/ToddlerFilter'
 
 class ToddlerContainer extends Component {
@@ -28,12 +28,15 @@ class ToddlerContainer extends Component {
             <div id="toddler-filter">
                 <br />
                 <div id="directory">
-                <h4><u>Student Directory</u></h4>
-                <input id="directory-input" onChange={this.handleOnChange} value={this.state.value} placeholder="Search Student..."/><br />
-                </div>
-                {filteredToddler.map( toddler => {
-                    return <ToddlerFilter delete={this.props.deleteToddlers} key={toddler.id} toddler={toddler} toddlerId={toddler.id}/>
+                <fieldset>
+                    <h4><u>Student Directory</u></h4>
+                    <input id="directory-input" onChange={this.handleOnChange} value={this.state.value} placeholder="Search Student..."/><br />
+                    {filteredToddler.map( toddler => {
+                    return <ToddlerFilter  key={toddler.id} toddler={toddler} toddlerId={toddler.id}/>
                 })}
+                </fieldset>
+                </div>
+                
             </div>
         )
     }
@@ -45,4 +48,4 @@ class ToddlerContainer extends Component {
 //       };
 // }
 
-export default connect(null, { deleteToddlers })(ToddlerContainer)
+export default ToddlerContainer

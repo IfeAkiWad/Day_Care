@@ -14,7 +14,7 @@ const toddlerReducer = (state = {toddlers: []}, action) => {
             }
             // return {...state, toddlers: [...state.toddlers, action.toddler]} 
         case "REMOVE_TODDLER":
-            let deleteToddlers = state.toddlers.filter(toddler => toddler.id !== action.id)
+            let deleteToddlers = state.toddlers.filter(toddler => toddler.id === action.payload.id)
             return {...state, toddlers: deleteToddlers}
         default:
             return state;

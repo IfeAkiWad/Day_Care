@@ -35,10 +35,10 @@ export const submitToddlers = (toddler, daycareId) => {
 export const deleteToddlers = (toddlerId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/toddlers/${toddlerId}`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        // 'Accept': 'application/json'
+        'Accept': 'application/json'
     },
     body: JSON.stringify()
     })

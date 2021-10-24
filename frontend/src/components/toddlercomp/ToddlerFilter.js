@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-// import { deleteToddlers } from '../../actions/toddlerActions'
+import Toddler from './Toddler'
+import { connect } from 'react-redux'
+import { deleteToddlers } from '../../actions/toddlerActions'
 
 class ToddlerFilter extends Component {
    
@@ -12,15 +13,13 @@ class ToddlerFilter extends Component {
 
         let toddler = this.props.toddler
         let toddlerId = this.props.toddlerId
-        const handleDelete = (toddler) => {
-            this.props.delete(toddler)
-        }
+       
         return (
             <div id="Toddler-filter">
                 <br />
-                <table id={toddlerId} class="table">
+                <table data-id={toddlerId} class="table">
                     <thead>
-                        <tr id={toddlerId}>
+                        <tr>
                             <th>Name</th>
                             <th>Birthday</th>
                             <th>Emergency Contact</th>
@@ -29,7 +28,7 @@ class ToddlerFilter extends Component {
                         </tr>
                         </thead>
                         <tbody>
-                            <tr id={toddlerId}>
+                            <tr>
                                 <td>{toddler.name}</td>
                                 <td>{toddler.birthday}</td>
                                 <td>{toddler.contact}</td>
@@ -38,9 +37,8 @@ class ToddlerFilter extends Component {
                             </tr>
                         </tbody>
                 </table>
-                <div id="button">               
-                    <button onClick={() => handleDelete(toddler.id)}>Delete</button>
-                </div>
+                <Toddler delete={this.props.deleteToddlers} toddlerShow={this.props.toddler} toddlerId={this.props.toddlerId}/>
+               
                 
             </div>
         )
@@ -49,4 +47,4 @@ class ToddlerFilter extends Component {
 
 
 
-export default ToddlerFilter
+export default connect(null, { deleteToddlers })(ToddlerFilter)
