@@ -5,9 +5,9 @@ export const fetchToddlers = () => {
     .then(response => {
       return response.json()
     })
-    .then(data => {
-      console.log(data, 'fetching toddlers')
-      dispatch({ type: 'ADD_TODDLERS', toddlers: data })
+    .then(toddlers => {
+      console.log(toddlers, 'fetching toddlers')
+      dispatch({ type: 'ADD_TODDLERS', payload: toddlers })
     })
   }
 }
@@ -34,7 +34,7 @@ export const submitToddlers = (toddler, daycareId) => {
 
 export const deleteToddlers = (toddlerId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/toddlers/${toddlerId}`, {
+    return fetch(`http://localhost:3000/toddlers/${toddlerId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -42,14 +42,13 @@ export const deleteToddlers = (toddlerId) => {
     },
     body: JSON.stringify()
     })
-  
     .then(response => response.json())
     .then(toddler => {
       console.log(toddler, "deleting toddler")
       dispatch({ type: 'REMOVE_TODDLER', payload: toddler })                    
       alert(toddler.message)
     })
-    // debugger
+    
 
   }
 }

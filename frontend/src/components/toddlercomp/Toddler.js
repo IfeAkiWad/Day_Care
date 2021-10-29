@@ -5,13 +5,13 @@ export default class Toddler extends Component {
         console.log(this.props.toddlerShow, this.props.toddlerId, "Toddler")
         let toddler = this.props.toddlerShow
 
-        const handleOnDelete = (toddler) => {
-            this.props.delete(toddler)
+        const handleOnDelete = (toddlerId) => {
+            this.props.delete(toddlerId)
             
         }
 
         return (
-            <div>
+            <div key={toddler.id} value={toddler.id}>
                 {/* <h1>Toddler component</h1> */}
                 <h1><u>{toddler.name}'s profile</u></h1>
                 <table>
@@ -32,10 +32,12 @@ export default class Toddler extends Component {
                             </tr>
                         </tbody>
                 </table>
-                <div id="button">               
-                    <button onClick={()=>handleOnDelete(toddler)}>Delete</button>
+                <div id="button" value={toddler.id}>               
+                    <button onClick={()=>handleOnDelete(toddler.id)}>Delete</button>
                 </div>
             </div>
         )
     }
 }
+
+

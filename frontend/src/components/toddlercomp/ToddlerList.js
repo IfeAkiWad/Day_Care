@@ -8,6 +8,7 @@ export default class ToddlerList extends Component {
         return (
             <div id="table-list">
                 <br />
+            
                 <table class="table">
                     <thead>
                         <tr>
