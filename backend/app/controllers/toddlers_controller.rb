@@ -1,6 +1,6 @@
 class ToddlersController < ApplicationController
   before_action :set_daycare
-  before_action :set_toddler, only: [:show, :update, :destroy]
+  before_action :set_toddler, only: [:show, :destroy]
 
   # GET /toddlers
   def index
@@ -16,11 +16,13 @@ class ToddlersController < ApplicationController
 
   # POST /toddlers
   def create
-    @daycare = Daycare.find_by(params[:daycare_id])
-    @toddler = @daycare.toddlers.build(toddler_params)
+    # byebug
+    # @daycare = Daycare.find_by(params[:daycare_id])
+    @toddler = @daycare.toddlers.new(toddler_params)
 
     if @toddler.save
       render json: @toddler, status: :created, location: @toddler
+      # render json: {message: "Successfully submitted #{@toddler.name}!"}
     else
       render json: @toddler.errors, status: :unprocessable_entity
     end
@@ -37,13 +39,18 @@ class ToddlersController < ApplicationController
 
   # DELETE /toddlers/1
   def destroy
+    # @toddler = Toddler.find_by(params[:id])
+
+    # byebug
     @toddler.destroy
+    render json: {message: "Successfully deleted #{@toddler.name}!"}
+
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_toddler
-      @toddler = Toddler.find(params[:id])
+      @toddler = Toddler.find_by(params[:id])
     end
 
     def set_daycare
