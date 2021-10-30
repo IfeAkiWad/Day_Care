@@ -16,13 +16,10 @@ class ToddlersController < ApplicationController
 
   # POST /toddlers
   def create
-    # byebug
-    # @daycare = Daycare.find_by(params[:daycare_id])
     @toddler = @daycare.toddlers.new(toddler_params)
 
     if @toddler.save
       render json: @toddler, status: :created, location: @toddler
-      # render json: {message: "Successfully submitted #{@toddler.name}!"}
     else
       render json: @toddler.errors, status: :unprocessable_entity
     end
@@ -39,9 +36,6 @@ class ToddlersController < ApplicationController
 
   # DELETE /toddlers/1
   def destroy
-    # @toddler = Toddler.find_by(params[:id])
-
-    # byebug
     @toddler.destroy
     render json: {message: "Successfully deleted #{@toddler.name}!"}
 
@@ -50,7 +44,7 @@ class ToddlersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_toddler
-      @toddler = Toddler.find_by(params[:id])
+      @toddler = Toddler.find(params[:id])
     end
 
     def set_daycare
