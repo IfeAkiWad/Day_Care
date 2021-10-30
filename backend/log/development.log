@@ -19117,3 +19117,43 @@ Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.6ms | Allocations: 2790)
 Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 3425)
 
 
+Started GET "/toddlers" for ::1 at 2021-10-30 13:08:44 -0500
+Started GET "/daycares" for ::1 at 2021-10-30 13:08:44 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.4ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+Processing by ToddlersController#index as */*
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.6ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:51:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+Completed 200 OK in 54ms (Views: 45.0ms | ActiveRecord: 2.9ms | Allocations: 18310)
+
+
+  ↳ app/controllers/toddlers_controller.rb:9:in `index'
+Completed 200 OK in 45ms (Views: 16.8ms | ActiveRecord: 0.8ms | Allocations: 16945)
+
+
+Started GET "/daycares" for ::1 at 2021-10-30 13:08:49 -0500
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.3ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.7ms | Allocations: 2531)
+
+
+Started GET "/toddlers" for ::1 at 2021-10-30 13:08:49 -0500
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:51:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:9:in `index'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 2034)
+
+
