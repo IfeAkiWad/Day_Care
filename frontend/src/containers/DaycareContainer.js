@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Daycare  from '../components/daycarecomp/Daycare';
+import { fetchDaycares } from '../actions/daycareActions';
+import { fetchToddlers } from '../actions/toddlerActions';
 
 class DaycareContainer extends Component {
+    componentDidMount() {
+        this.props.fetchDaycares()
+        this.props.fetchToddlers()
+    }
+      
     render() {
         console.log(this.props.sunnyDaycare, "Daycare Container")
         return (
@@ -24,5 +31,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(DaycareContainer)
+export default connect(mapStateToProps, { fetchDaycares, fetchToddlers })(DaycareContainer)
 

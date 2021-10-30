@@ -11,7 +11,6 @@ class DaycareFormContainer extends Component {
         const daycareToddler = daycare.map(d => {
             return d.toddlers
         })
-        // console.log(daycareId)
         return (
             <div id="daycare-form">
                 <DaycareForm toddler={daycareToddler} daycareId={daycareId} />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-// import { deleteToddlers } from '../actions/toddlerActions'
 import ToddlerFilter from '../components/toddlercomp/ToddlerFilter'
+
+// this container contains and handles the data for the toddler filter
 
 class ToddlerContainer extends Component {
     constructor() {
@@ -41,11 +41,5 @@ class ToddlerContainer extends Component {
         )
     }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         delete: (toddler) => dispatch({ type: "REMOVE_TODDLER", payload: toddler }),
-//       };
-// }
 
 export default ToddlerContainer

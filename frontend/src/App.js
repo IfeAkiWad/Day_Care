@@ -8,6 +8,7 @@ import NavBar from './components/navcomp/NavBar';
 import Welcome from './components/Welcome'
 import DaycareFormContainer from './containers/DaycareFormContainer';
 import DaycareContainer from './containers/DaycareContainer';
+import ToddlerImage from './components/ToddlerImage';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ class App extends Component {
           <Route exact path="/" component={Welcome}/>
           <Route exact path="/daycares/toddlers/new" component={DaycareFormContainer}/>
           <Route exact path="/toddlers" component={DaycareContainer}/>
+          <Route exact path="/gallery" component={ToddlerImage}/>
         </Switch>
       </Router>
     )

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+
+// THIS COMPONENT IS RENDERING THE INDEX OF THE AVAILABLE TODDLERS
+
 export default class ToddlerList extends Component {
     render() {
         console.log(this.props, "ToddlerList")

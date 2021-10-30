@@ -3,20 +3,16 @@ import Toddler from './Toddler'
 import { connect } from 'react-redux'
 import { deleteToddlers } from '../../actions/toddlerActions'
 
+// THIS COMPONENT IS RENDERING THE FILTERED TODDLER(S)
 
 class ToddlerFilter extends Component {
    
 
 
     render() {
-        // console.log(this.props.toddler, "Toddler Filter")
-        // console.log(this.props.toddlerId, "Toddler Filter")
-
         let toddler = this.props.toddler
         let toddlerId = this.props.toddlerId
        
-        console.log(this.props.toddlerFilter)
-
         return (
             <div id="Toddler-filter">
                 <br /> 

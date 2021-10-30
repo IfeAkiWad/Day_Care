@@ -1,18 +1,23 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { fetchDaycares } from '../../actions/daycareActions';
+import { fetchToddlers } from '../../actions/toddlerActions';
 
-export default class Toddler extends Component {
+//THIS COMPONENT RENDERS AND HANDLES THE INDIVIDUAL TODDLER PROFILE
+
+class Toddler extends Component {
     render() {
         console.log(this.props.toddlerShow, this.props.toddlerId, "Toddler")
         let toddler = this.props.toddlerShow
 
-        const handleOnDelete = (toddlerId) => {
-            this.props.delete(toddlerId)
-            
+        const handleOnDelete = async (toddlerId) => {
+            await this.props.delete(toddlerId)
+            this.props.fetchDaycares();
+            this.props.fetchToddlers();
         }
 
         return (
             <div key={toddler.id} value={toddler.id}>
-                {/* <h1>Toddler component</h1> */}
                 <h1><u>{toddler.name}'s profile</u></h1>
                 <table>
                     <thead>
@@ -40,4 +45,5 @@ export default class Toddler extends Component {
     }
 }
 
+export default  connect(null, { fetchDaycares, fetchToddlers })(Toddler)
 

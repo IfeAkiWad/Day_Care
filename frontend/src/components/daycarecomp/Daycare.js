@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import ToddlerContainer from '../../containers/ToddlerContainer'
 import ToddlerList from '../toddlercomp/ToddlerList'
-import { deleteToddlers } from '../../actions/toddlerActions'
-import { connect } from 'react-redux'
 
 class Daycare extends Component {
     render() { 
@@ -10,14 +8,15 @@ class Daycare extends Component {
         return (
             <div id="table-list">
                     {/* eslint-disable-next-line array-callback-return*/}
-                    {this.props.getDaycare.toddlers.map( toddler => {
+                    {this.props.getDaycare.toddlers.map( toddler => { //Passing props containing an array of toddlers and  their info
                         return <ToddlerList key={toddler.id} toddlerDetail={toddler} />
                     })}
                      
-                <ToddlerContainer getToddlers={this.props.getDaycare}/>
+                     {/* passing props of the whole daycare object */}
+                <ToddlerContainer getToddlers={this.props.getDaycare}/> 
             </div>
         )
     }
 }
 
-export default connect(null, { deleteToddlers })(Daycare)
+export default Daycare 

@@ -1,10 +1,24 @@
 html, body {
-  /* margin:0; 
-  padding:0;   */
   height:100%; 
   width: 100%;
 }
 
+/* image */
+.toddler-image {
+    height: 50%;
+    background-repeat: no-repeat;
+    position: relative; 
+    background-color: orange;
+}
+
+#image-htwo {
+  background-color: white;
+  background-size:10%;
+  margin:top;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:xx-large;
+}
 
 /* navigation */
 nav {
@@ -12,7 +26,6 @@ nav {
   font-size: 20px;
   margin: auto;
   margin-top: 15px;
-  /* background-color: yellow; */
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight:600;
 }
@@ -22,16 +35,12 @@ nav {
   text-align: center;
   font-family:Arial, Helvetica, sans-serif;
   font-weight:500 ;
-  /* text-shadow: 1px 1px 2px #000000; */
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
   width: 35%; 
-  /* float:left; */
   margin: auto;
   margin-top: 25px;
-  /*margin-right: 50px;
-  margin-left: 99px; */
   padding: 12px 20px;
   border: 2px solid #0b2742;    
 }
@@ -66,7 +75,6 @@ nav {
 #form-input {
   background-color: #ffffff;
   cursor: text;
-  /* border-radius: 4px; */
   font-size: 15px;
 }
 
@@ -80,7 +88,6 @@ label {
     color: black;
     font-size: 14px;
     padding: 5px 10px;
-    /* border-radius: 4px; */
     cursor: pointer;
 }
 
@@ -109,11 +116,9 @@ td {
 }
 
 #button {
-  /* background-color: yellow ; */
     color: black;
     font-size: 14px;
     padding: 5px 10px;
-    /* border-radius: 4px; */
     cursor: pointer;
     text-align: center;
     margin-bottom: 50px; 
@@ -123,14 +128,12 @@ td {
 #directory {
   background-color: #ffffff;
   cursor: text;
-  /* border-radius: 4px; */
   font-size: 16px;
 text-align: center;}
 
 #directory-input {
   background-color: #ffffff;
   cursor: text;
-  /* border-radius: 4px; */
   font-size: 15px;
   margin-top: 0px;
   margin-bottom: 50px; 
@@ -146,41 +149,3 @@ text-align: center;}
 
 
 
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

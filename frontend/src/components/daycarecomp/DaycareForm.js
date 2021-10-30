@@ -25,13 +25,6 @@ class DaycareForm extends Component {
     handleOnSubmit = (event) => {
         event.preventDefault();
         this.props.submitToddlers(this.state, this.props.daycareId);
-        // this.setState({
-        //     name: '',
-        //     birthday: '',
-        //     contact: '',
-        //     phone: '',
-        //     allergy: ''
-        // })
         alert("Successfully submitted new student");
         this.props.history.push('/toddlers');
 
