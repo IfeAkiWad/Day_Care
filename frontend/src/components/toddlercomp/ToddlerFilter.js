@@ -20,19 +20,11 @@ class ToddlerFilter extends Component {
                     <thead>
                         <tr>
                             <th>Name</th>
-                             <th>Birthday</th>
-                            <th>Emergency Contact</th>
-                            <th>Phone</th>
-                            <th>Allergy</th> 
                          </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{toddler.name}</td> 
-                                <td>{toddler.birthday}</td>
-                                <td>{toddler.contact}</td>
-                                <td>{toddler.phone}</td>
-                                <td>{toddler.allergy}</td> 
+                                <td>{toddler.name}</td>
                             </tr> 
                         </tbody> 
                 </table> 

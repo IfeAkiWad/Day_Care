@@ -6,9 +6,12 @@ html, body {
 /* image */
 .toddler-image {
     height: 50%;
-    background-repeat: no-repeat;
-    position: relative; 
     background-color: orange;
+    overflow-y:scroll; 
+    margin-left: 13%;
+    width:75%; 
+    height:50%;
+
 }
 
 #image-htwo {
@@ -93,7 +96,7 @@ label {
 
 /* table */
 
-table {
+#toddler-table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 50%;
@@ -103,6 +106,17 @@ table {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
   border: 1px solid #0b2742;   
 
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 15%;
+  margin: auto;
+  margin-top: 25px;
+  background-color: rgb(255, 166, 0);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+  border: 1px solid #0b2742;   
 }
 
 td, th {
@@ -139,6 +153,12 @@ text-align: center;}
   margin-bottom: 50px; 
 
 
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(255, 166, 0);
+ 
 }
 
 

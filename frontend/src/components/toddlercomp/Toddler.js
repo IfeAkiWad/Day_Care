@@ -19,7 +19,7 @@ class Toddler extends Component {
         return (
             <div key={toddler.id} value={toddler.id}>
                 <h1><u>{toddler.name}'s profile</u></h1>
-                <table>
+                <table id='toddler-table'>
                     <thead>
                         <tr>
                             <th>Birthday</th>

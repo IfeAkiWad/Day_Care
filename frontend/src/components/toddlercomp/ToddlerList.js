@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 // THIS COMPONENT IS RENDERING THE INDEX OF THE AVAILABLE TODDLERS
 
 export default class ToddlerList extends Component {
@@ -11,24 +10,17 @@ export default class ToddlerList extends Component {
         return (
             <div id="table-list">
                 <br />
+                
             
                 <table class="table">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Birthday</th>
-                            <th>Emergency Contact</th>
-                            <th>Phone</th>
-                            <th>Allergy</th>
                         </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>{toddler.name}</td>
-                                <td>{toddler.birthday}</td>
-                                <td>{toddler.contact}</td>
-                                <td>{toddler.phone}</td>
-                                <td>{toddler.allergy}</td>
                             </tr>
                         </tbody>
                 </table>

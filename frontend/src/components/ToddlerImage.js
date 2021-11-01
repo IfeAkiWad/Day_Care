@@ -7,24 +7,24 @@ import ToddlerFriends from '../ToddlerFriends.jpeg'
 
 const ToddlerImage = () => {
     return (
-        <div className="toddler-image">
+        <div >
        
             <div>
                 <h2 id='image-htwo'>We believe learning comes from interactive play!</h2>
             </div>
-            <img src={Image} alt='Toddlers playing'/>
+            <img className="toddler-image" src={Image} alt='Toddlers playing'/>
             <div>
                 <h2 id='image-htwo'>We believe words are fun!</h2>
             </div>
-            <img src={ToddlerRead} alt='Toddler-learning' />
+            <img className="toddler-image" src={ToddlerRead} alt='Toddler-learning' />
             <div>
                 <h2 id='image-htwo'>We believe in moving our bodies!</h2>
             </div>
-            <img src={ToddlersMoving} alt='Toddler-learning' />
+            <img className="toddler-image" src={ToddlersMoving} alt='Toddler-learning' />
             <div>
                 <h2 id='image-htwo'>We believe in friendship!</h2>
             </div>
-            <img src={ToddlerFriends} alt='Toddler-learning' />
+            <img className="toddler-image" src={ToddlerFriends} alt='Toddler-learning' />
 
 
         </div>
