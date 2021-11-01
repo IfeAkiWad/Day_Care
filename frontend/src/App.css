@@ -5,7 +5,11 @@ html, body {
 
 /* image */
 .toddler-image {
-    height: 50%;
+    /* background-color:rgba(104, 107, 107, 0.363); */
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    border-radius: 4px;
+    padding: 12px 10px; 
     background-color: orange;
     overflow-y:scroll; 
     margin-left: 13%;
@@ -99,7 +103,6 @@ label {
 }
 
 /* table */
-
 #toddler-table {
   font-family: arial, sans-serif;
   border-collapse: collapse;

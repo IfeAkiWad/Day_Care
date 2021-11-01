@@ -7,7 +7,7 @@ import ToddlerFriends from '../ToddlerFriends.jpeg'
 
 const ToddlerImage = () => {
     return (
-        <div >
+        <div id='image'>
        
             <div>
                 <h2 id='image-htwo'>We believe learning comes from interactive play!</h2>
