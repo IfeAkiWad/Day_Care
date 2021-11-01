@@ -25,15 +25,6 @@ class ToddlersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /toddlers/1
-  def update
-    if @toddler.update(toddler_params)
-      render json: @toddler
-    else
-      render json: @toddler.errors, status: :unprocessable_entity
-    end
-  end
-
   # DELETE /toddlers/1
   def destroy
     @toddler.destroy
