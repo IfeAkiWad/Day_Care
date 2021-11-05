@@ -1,6 +1,6 @@
 # Sunny Day Care
 
-Sunny Day Care is a Ruby on Rails backend and React/Redux frontend daycare site.
+Sunny Day Care is a Ruby on Rails backend and React/Redux frontend daycare app.
 
 ## Installation
 
