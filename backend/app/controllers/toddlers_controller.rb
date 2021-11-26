@@ -5,7 +5,6 @@ class ToddlersController < ApplicationController
   # GET /toddlers
   def index
     @toddlers = Toddler.all
-
     render json: @toddlers
   end
 
