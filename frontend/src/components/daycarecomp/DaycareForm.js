@@ -6,7 +6,7 @@ import { submitToddlers } from '../../actions/toddlerActions'
 
 class DaycareForm extends Component {
     constructor() {
-        super()
+        super() //helps constructor execure what itinherited from React.component
         this.state = {
             name: '',
             birthday: '',
@@ -18,22 +18,20 @@ class DaycareForm extends Component {
     }
 
     handleOnChange = (event) => {
-        console.log(event.target.value, "Daycare Form: handle on change")
+        console.log('typing in form')
         this.setState({[event.target.name]: event.target.value})
     }
 
     handleOnSubmit = (event) => {
+        console.log('form submit')
         event.preventDefault();
-        this.props.submitToddlers(this.state, this.props.daycareId);
+        this.props.submitToddlers(this.state, this.props.daycareId); //using action dispatch function as a prop (mapDispatchToProps)
         alert("Successfully submitted new student");
-        this.props.history.push('/toddlers');
+        this.props.history.push('/toddlers'); //redirecting to toddlers index
 
     }
 
     render() {
-        console.log(this.props.daycareId, "daycare ID")
-        console.log(this.props.toddler, "toddler")
-        
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit} id="form">
@@ -58,4 +56,4 @@ class DaycareForm extends Component {
     }
 }
 
-export default withRouter(connect( null, { submitToddlers })(DaycareForm))
+export default /*connecting component to the router*/ withRouter(connect( null, { submitToddlers })(DaycareForm))

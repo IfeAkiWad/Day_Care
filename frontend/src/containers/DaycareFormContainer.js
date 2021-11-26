@@ -8,12 +8,12 @@ class DaycareFormContainer extends Component {
         const daycareId = daycare.map(d => {
             return d.id
         })
-        const daycareToddler = daycare.map(d => {
-            return d.toddlers
-        })
+        // const daycareToddler = daycare.map(d => {
+        //     return d.toddlers
+        // })
         return (
             <div id="daycare-form">
-                <DaycareForm toddler={daycareToddler} daycareId={daycareId} />
+                <DaycareForm /*toddler={daycareToddler}*/ daycareId={daycareId} />
             </div>
         )
     }

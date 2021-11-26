@@ -1,45 +1,82 @@
 import React, { Component } from 'react'
-import ToddlerFilter from '../components/toddlercomp/ToddlerFilter'
+import ToddlerFilterContainer from './ToddlerFilterContainer'
+import ToddlerTableRow from '../components/toddlercomp/ToddlerTableRow'
 
-// this container contains and handles the data for the toddler filter
+// Daycare component mapping through the props recieved from daycare container and passing props down to toddlerlist and toddler conatainer
 
 class ToddlerContainer extends Component {
+    // constructor(){
+    //     super()
+    //     // let initialArray = this.props.getDaycare.toddlers
+    //     // let initialCopy = initialArray.slice()
+    //     this.state = {
+    //         // slicedInitialArray: initialCopy,
+    //         sortedArray: []
+    //     }
+        
+    // }
+
+    // sort = () => {
+    //     let toddlers = this.props.getDaycare.toddlers
+
+    //     this.setState({
+    //         ...this.state, sorted: toddlers.sort((t,u) =>{
+    //         if (t.name < u.name) {return -1;}
+    //         if (t.name > u.name) {return 1;}
+    //         return 0;
+    //        })
+    // })
+    // //     let initialArray = this.props.getDaycare.toddlers
+    // //     let copiedInitialArray = JSON.parse(JSON.stringify(initialArray));
+    // //     console.log(copiedInitialArray)
+       
+    // }
+
+    // unsort = () => {
+    // //     let initialArray = this.props.getDaycare.toddlers
+
+    // //     this.setState({
+    // //         ...this.state, newArray: initialArray
+    // //     })
+    // //     // let initialArray = this.props.getDaycare.toddlers
+    // //     // this.setState({initialArray})
+    // //     // console.log(initialArray)
+    // //     // this.setState({
+    // //     //    newArray: initialArray.sort((t,u) =>{
+    // //     //     if (t.name < u.name) {return 1;}
+    // //     //     if (t.name > u.name) {return -1;}
+    // //     //     return 0;
+    // //     //    })
+    // //     // })
+    // }
     constructor() {
         super()
-        this.state = {
-            value: ''
+        this.state ={
+            inc: ''
         }
     }
-
-    handleOnChange = (event) => {
-        this.setState({value: event.target.value})
+    
+    inputField = (event) => {
+        this.setState({inc: event.target.value})
     }
-
-    render() {
-        console.log(this.props.getToddlers.toddlers, "Toddler Container")
-        let daycareToddlers = this.props.getToddlers.toddlers
-        // eslint-disable-next-line array-callback-return
-        let filteredToddler = daycareToddlers.filter( toddler => {
-            if(this.state.value !== '') 
-                {return toddler.name.toLowerCase().includes(this.state.value)
-            }
-        })
+    
+    render() { 
+       
         return (
-            <div id="toddler-filter">
+            <div id="table-list">
+                {/* <button onClick={this.sort}>Sort</button><br />
+                <button onClick={this.unsort}>Unsort</button> */}
+                    <input onChange={this.inputField} value={this.state.inc} /><br />
                 <br />
-                <div id="directory">
-                <fieldset>
-                    <h4><u>Student Directory</u></h4>
-                    <input id="directory-input" onChange={this.handleOnChange} value={this.state.value} placeholder="Search Student..."/><br />
-                    {filteredToddler.map( toddler => {
-                    return <ToddlerFilter  key={toddler.id} toddler={toddler} toddlerId={toddler.id}/>
-                })}
-                </fieldset>
-                </div>
-                
+                    {/* eslint-disable-next-line array-callback-return*/}
+                    {this.props.getDaycare.toddlers.map( toddler => { //Passing props containing an array of toddlers and  their info
+                        return <ToddlerTableRow key={toddler.id} toddlerDetail={toddler} inc={this.state.inc} />
+                    })}
+                     {/* passing props of the whole daycare object */}
+                <ToddlerFilterContainer getToddlers={this.props.getDaycare}/> 
             </div>
         )
     }
 }
 
-export default ToddlerContainer
+export default ToddlerContainer 

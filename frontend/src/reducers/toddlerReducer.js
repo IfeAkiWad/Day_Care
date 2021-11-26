@@ -5,8 +5,9 @@ const toddlerReducer = (state = {toddlers: []}, action) => {
             ...state, 
             toddlers: [...state.toddlers, action.payload], 
             loading: true
-        }
+            }
         case 'ADD_TODDLERS':
+            console.log('ADDING TODDLER')
             return {
                 ...state,
                 toddlers: action.payload,

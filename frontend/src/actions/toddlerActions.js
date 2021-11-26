@@ -1,12 +1,14 @@
 export const fetchToddlers = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_TODDLERS'})
+    console.log('a')
+
     fetch('http://localhost:3000/toddlers')
     .then(response => {
       return response.json()
     })
     .then(toddlers => {
-      console.log(toddlers, 'fetching toddlers')
+      console.log('b')
       dispatch({ type: 'ADD_TODDLERS', payload: toddlers })
     })
   }
