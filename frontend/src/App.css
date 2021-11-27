@@ -125,6 +125,12 @@ label {
 }
 
 /* table */
+#sort-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #toddler-table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -135,6 +141,10 @@ label {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
   border: 1px solid #0b2742;   
 
+}
+
+#table-list {
+  margin-top: 5%;
 }
 
 table {

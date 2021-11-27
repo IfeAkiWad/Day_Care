@@ -7,7 +7,7 @@ export default class ToddlerTableRow extends Component {
         const toddler = this.props.toddlerDetail
         console.log(toddler)
         return (
-            <div id="table-list">
+            <div className="table-list">
                 
                 <br />
                 <table class="table">
