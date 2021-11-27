@@ -49,28 +49,16 @@ class ToddlerContainer extends Component {
     // //     //    })
     // //     // })
     // }
-    constructor() {
-        super()
-        this.state ={
-            inc: ''
-        }
-    }
-    
-    inputField = (event) => {
-        this.setState({inc: event.target.value})
-    }
-    
     render() { 
        
         return (
             <div id="table-list">
                 {/* <button onClick={this.sort}>Sort</button><br />
                 <button onClick={this.unsort}>Unsort</button> */}
-                    <input onChange={this.inputField} value={this.state.inc} /><br />
                 <br />
                     {/* eslint-disable-next-line array-callback-return*/}
                     {this.props.getDaycare.toddlers.map( toddler => { //Passing props containing an array of toddlers and  their info
-                        return <ToddlerTableRow key={toddler.id} toddlerDetail={toddler} inc={this.state.inc} />
+                        return <ToddlerTableRow key={toddler.id} toddlerDetail={toddler} />
                     })}
                      {/* passing props of the whole daycare object */}
                 <ToddlerFilterContainer getToddlers={this.props.getDaycare}/> 
