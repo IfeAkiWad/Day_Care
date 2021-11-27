@@ -74,6 +74,10 @@ nav a:hover {
   border: 2px solid #0b2742;    
 }
 
+#welcome{
+  margin-top: 8%;
+}
+
 .welcome {
   background-color: rgb(255, 166, 0);
   font-weight:700 ;
