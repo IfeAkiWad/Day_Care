@@ -10,7 +10,7 @@ class ImageGallery extends Component {
         return (
             <div id='image'>
                 
-                <div>
+                <div id='image-div'>
                     <h2 id='image-htwo'>We believe learning comes from interactive play!</h2>
                 </div>
                 <img className="toddler-image" src={Image} alt='Toddlers playing'/>

@@ -4,6 +4,10 @@ html, body {
 }
 
 /* image */
+#image-div {
+margin-top: 5%;
+}
+
 .toddler-image {
     /* background-color:rgba(104, 107, 107, 0.363); */
     box-sizing: border-box;
