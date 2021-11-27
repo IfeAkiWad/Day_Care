@@ -125,12 +125,6 @@ label {
 }
 
 /* table */
-#sort-button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #toddler-table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
