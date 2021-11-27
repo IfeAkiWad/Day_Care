@@ -26,8 +26,8 @@ class ToddlerContainer extends Component {
         let daycareToddlers = this.props.getToddlers.toddlers
         // eslint-disable-next-line array-callback-return
         let filteredToddler = daycareToddlers.filter( toddler => {
-            if(this.state.value !== '') 
-                {return toddler.name.toLowerCase().includes(this.state.value)
+            if(this.state.value !== '') {
+                return toddler.name.toLowerCase().includes(this.state.value)
             }
         })
         return (
