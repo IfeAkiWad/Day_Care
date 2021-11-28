@@ -18,7 +18,7 @@ class AdminsController < ApplicationController
     @admin = Admin.new(admin_params)
 
     if @admin.save
-      render json: @admin, status: :created, location: @admin
+      render json: { admin: AdminSerializer.new(@admin) }, status: :created, location: @admin
     else
       render json: @admin.errors, status: :unprocessable_entity
     end
