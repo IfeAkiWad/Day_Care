@@ -30371,3 +30371,90 @@ app/controllers/application_controller.rb:41: syntax error, unexpected end-of-in
 app/controllers/application_controller.rb:41: syntax error, unexpected end-of-input, expecting end
 app/controllers/admins_controller.rb:1:in `<main>'
 Started POST "/admins" for ::1 at 2021-11-28 23:06:20 -0600
+Started POST "/admins" for ::1 at 2021-11-28 23:23:09 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminsController#create as JSON
+  Parameters: {"admin"=>{"username"=>"l_moon", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :username[0m
+  [1m[36mAdmin Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:16:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.04ms)
+Completed 201 Created in 237ms (Views: 11.5ms | ActiveRecord: 1.4ms | Allocations: 8345)
+
+
+Started POST "/admins" for ::1 at 2021-11-28 23:25:05 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminsController#create as JSON
+  Parameters: {"admin"=>{"username"=>"l_moon", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :username[0m
+  [1m[36mAdmin Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:16:in `create'
+[active_model_serializers] Rendered AdminSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 201 Created in 228ms (Views: 8.6ms | ActiveRecord: 1.3ms | Allocations: 8176)
+
+
+Started POST "/admins" for ::1 at 2021-11-28 23:25:59 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/ifeoluwaakinremi-wade/Day_care/backend/app/controllers/admins_controller.rb:18: syntax error, unexpected ',', expecting =>
+      render json: { @admin, jwt: @token }, status: :crea...
+                           ^):
+  
+app/controllers/admins_controller.rb:18: syntax error, unexpected ',', expecting =>
+app/controllers/admins_controller.rb:18: syntax error, unexpected ',', expecting =>
+Started POST "/admins" for ::1 at 2021-11-28 23:36:40 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminsController#create as JSON
+  Parameters: {"admin"=>{"username"=>"l_moon", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :username[0m
+  [1m[36mAdmin Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:16:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.95ms)
+Completed 201 Created in 232ms (Views: 6.3ms | ActiveRecord: 2.0ms | Allocations: 8253)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAdmins (20211128041008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE "admins"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211128041008"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToddlers (20211005221546)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "toddlers"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211005221546"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToddlers (20211005221546)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "toddlers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "birthday" date, "contact" varchar, "phone" integer, "allergy" varchar, "daycare_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211005221546"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAdmins (20211128041008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211128041008"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

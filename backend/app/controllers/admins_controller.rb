@@ -15,6 +15,7 @@ class AdminsController < ApplicationController
 
     if @admin.valid?
       @token = encode_token(admin_id: @admin.id)
+      # render json: { @admin, jwt: @token }, status: :created, location: @admin
       render json: { admin: AdminSerializer.new(@admin), jwt: @token }, status: :created
     else
       render json: { error: 'failed to create admin' }, status: :unprocessable_entity
@@ -35,6 +36,6 @@ class AdminsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_params
-      params.require(:admin).permit(:adminname, :password, :password_digest)
+      params.require(:admin).permit(:username, :password_digest)
     end
 end
