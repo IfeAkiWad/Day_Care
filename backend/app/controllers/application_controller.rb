@@ -5,22 +5,23 @@ class ApplicationController < ActionController::API
         # payload => { beef: 'steak' }
         JWT.encode(payload, ENV["APP_SECRET"])
         # jwt string: "eyJhbGciOiJIUzI1NiJ9.eyJiZWVmIjoic3RlYWsifQ._IBTHTLGX35ZJWTCcY30tLmwU9arwdpNVxtVU0NpAuI"
-      end
+    end
     
     def auth_header
     # { 'Authorization': 'Bearer <token>' }
-    request.headers['Authorization']
+        request.headers['Authorization']
     end
 
     def decoded_token
         if auth_header
             token = auth_header.split(' ')[1]
             # headers: { 'Authorization': 'Bearer <token>' }
-        begin
-            JWT.decode(token, ENV["APP_SECRET"], true)
-            # JWT.decode => [{ "beef"=>"steak" }, { "alg"=>"HS256" }]
-        rescue JWT::DecodeError
-            nil
+            begin
+                JWT.decode(token, ENV["APP_SECRET"], true)
+                # JWT.decode => [{ "beef"=>"steak" }, { "alg"=>"HS256" }]
+            rescue JWT::DecodeError
+                nil
+            end
         end
     end
 
