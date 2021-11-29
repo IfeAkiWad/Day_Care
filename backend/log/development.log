@@ -30370,3 +30370,4 @@ SyntaxError (/Users/ifeoluwaakinremi-wade/Day_care/backend/app/controllers/appli
 app/controllers/application_controller.rb:41: syntax error, unexpected end-of-input, expecting end
 app/controllers/application_controller.rb:41: syntax error, unexpected end-of-input, expecting end
 app/controllers/admins_controller.rb:1:in `<main>'
+Started POST "/admins" for ::1 at 2021-11-28 23:06:20 -0600
