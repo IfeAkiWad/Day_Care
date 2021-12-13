@@ -22,6 +22,7 @@ export default class ToddlerTableRow extends Component {
                             </tr>
                         </tbody>
                 </table>
+            
             </div>
         )
     }
