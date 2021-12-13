@@ -95,14 +95,17 @@ nav a:hover {
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
   text-align: center;
-  margin: auto;
   font-size: 20px;
   font-family:Arial, Helvetica, sans-serif;
   font-weight:500 ;
-  width: 35%; 
   margin-top: 100px;
   padding: 12px 20px;
-  border: 2px solid #0b2742;   
+  border: 2px solid #0b2742; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  width: 40%;  
 }
 
 #form-input {
@@ -162,13 +165,46 @@ td {
   background-color: #ffffff;
 }
 
+#form-return {
+  background-color: orange ;
+    color: azure;
+    font-size: 14px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 43.25%;
+    margin-top: 2%;
+    /* font-size: large; */
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+
+}
+
+#form-return a:link {
+  color: azure;
+  background-color: transparent;
+  text-decoration: none;
+  
+}
+
+#form-return a:visited {
+  color: azure;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#form-return a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 #button {
     color: black;
     font-size: 14px;
     padding: 5px 10px;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 50px; 
+    margin-bottom: 50px;   
 
 }
 

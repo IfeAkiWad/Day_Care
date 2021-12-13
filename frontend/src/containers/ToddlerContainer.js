@@ -16,7 +16,8 @@ class ToddlerContainer extends Component {
                     {this.props.getDaycare.toddlers.map( toddler => { //Passing props containing an array of toddlers and  their info
                         return <ToddlerTableRow key={toddler.id} toddlerDetail={toddler} />
                     })}
-                    <Link to="/daycares/toddlers/new">Register Another Student</Link>
+                    <button id="form-return"><Link to="/daycares/toddlers/new">Register Another Student</Link></button>
+                    
                      {/* passing props of the whole daycare object */}
                 <ToddlerFilterContainer getToddlers={this.props.getDaycare}/> 
             </div>
