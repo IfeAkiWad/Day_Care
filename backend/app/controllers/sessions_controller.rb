@@ -16,8 +16,8 @@ class SessionsController < ApplicationController
     end
 
     def is_logged_in?
-    @current_admin = Admin.find(session[:admin_id]) if session[:admin_id]
-        if @current_admin
+    # @current_admin = Admin.find_by_id(session[:admin_id]) if session[:admin_id]
+        if current_admin
             render json: {
             logged_in: true,
             user: AdminSerializer.new(@current_admin)
@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session..delete :admin_id
+        session.clear  #:admin_id
         render json: {
             status: 200,
             logged_out: true

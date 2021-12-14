@@ -1,4 +1,42 @@
 class ApplicationController < ActionController::API
+    helper_method :current_admin 
+    
+    def current_admin
+        if session[:admin_id]
+            @current_admin ||= Admin.find_by_id(session[:admin_id])
+        end
+    end 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     # before_action :authorized
 
     # def encode_token(payload)
