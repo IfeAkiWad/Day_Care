@@ -26,7 +26,6 @@ export default class AdminSignUp extends Component {
                 <form onSubmit={this.handleOnSubmit}>
                     <input id="form-input" type="text" name="username" onChange={this.handleOnChange} value={this.state.username} placeholder="Admin ID..." required /><br />
                     <input id="form-input" type="text" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Admin password..." required /><br />
-
                 </form>
                 
             </div>
