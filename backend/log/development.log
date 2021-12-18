@@ -32115,3 +32115,51 @@ Completed 200 OK in 33ms (Views: 11.0ms | ActiveRecord: 0.5ms | Allocations: 458
   [1m[36mAdmin Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."username") = LOWER(?) LIMIT ?[0m  [["username", "#9987"], ["LIMIT", 1]]
   [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "#9987"], ["password_digest", "$2a$12$BmjXc0tJH/xZ.FhPpPS2..Ew0Ys1KCg1EDKvuFkrg.wFvUjSFJLiC"], ["created_at", "2021-12-17 04:46:06.730116"], ["updated_at", "2021-12-17 04:46:06.730116"]]
   [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/toddlers" for ::1 at 2021-12-17 21:54:06 -0600
+Started GET "/daycares" for ::1 at 2021-12-17 21:54:06 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.6ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.5ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  [1m[36mToddler Load (0.6ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+No serializer found for resource: #<Toddler id: 2, name: "nola willy", birthday: "2019-09-02", contact: "Sara Reynolds", phone: 7605551919, allergy: "none", daycare_id: 1, created_at: "2021-12-12 23:45:20", updated_at: "2021-12-12 23:45:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.84ms)
+Completed 200 OK in 17ms (Views: 8.2ms | ActiveRecord: 1.2ms | Allocations: 3161)
+
+
+[active_model_serializers]   [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (9.03ms)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 4363)
+
+
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAdmins (20211128041008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "admins"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211128041008"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAdmins (20211128041008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211128041008"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
