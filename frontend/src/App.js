@@ -4,6 +4,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import { fetchDaycares } from './actions/daycareActions';
 import { fetchToddlers } from './actions/toddlerActions';
+import { fetchAdmins } from './actions/adminAction';
 import NavBar from './components/navcomp/NavBar';
 import Welcome from './components/Welcome'
 import DaycareFormContainer from './containers/DaycareFormContainer';
@@ -17,6 +18,7 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchDaycares()
     this.props.fetchToddlers()
+    this.props.fetchAdmins()
   }
   
   render() {
@@ -36,5 +38,5 @@ class App extends Component {
 }
 
 // export default App
-export default connect(null, { fetchDaycares, fetchToddlers })(App)
+export default connect(null, { fetchDaycares, fetchToddlers, fetchAdmins })(App)
 
