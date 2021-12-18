@@ -6,14 +6,14 @@ const adminReducer = (state = {admins: []}, action) => {
             admins: [...state.admins, action.payload], 
             loading: true
             }
-        case 'ADD_ADMINS':
+        case 'LOGIN_ADMINS':
             console.log('ADDING ADMIN')
             return {
                 ...state,
                 admins: action.payload,
                 loading: false
             }
-        case "REMOVE_ADMIN":
+        case "LOGOUT_ADMIN":
             let logOutAdmins = state.admins.filter(admin => admin.id === action.payload.id)
             return {...state, admins: logOutAdmins}
         default:
