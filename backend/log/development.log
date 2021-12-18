@@ -32234,3 +32234,52 @@ puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
 puma (4.3.10) lib/puma/server.rb:472:in `process_client'
 puma (4.3.10) lib/puma/server.rb:328:in `block in run'
 puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/toddlers" for ::1 at 2021-12-17 22:16:52 -0600
+Started GET "/daycares" for ::1 at 2021-12-17 22:16:52 -0600
+Started GET "/daycares" for ::1 at 2021-12-17 22:18:16 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/toddlers" for ::1 at 2021-12-17 22:18:16 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DaycaresController#index as */*
+Processing by DaycaresController#index as */*
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 2, name: "nola willy", birthday: "2019-09-02", contact: "Sara Reynolds", phone: 7605551919, allergy: "none", daycare_id: 1, created_at: "2021-12-12 23:45:20", updated_at: "2021-12-12 23:45:20">
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (1.96ms)
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mDaycare Load (0.8ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (6.19ms)
+Completed 200 OK in 87ms (Views: 69.1ms | ActiveRecord: 1.1ms | Allocations: 17237)
+
+
+Completed 200 OK in 56ms (Views: 25.6ms | ActiveRecord: 0.4ms | Allocations: 12403)
+
+
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (6.31ms)
+Completed 200 OK in 95ms (Views: 23.7ms | ActiveRecord: 0.5ms | Allocations: 19236)
+
+
+Started GET "/toddlers" for ::1 at 2021-12-17 23:01:05 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.6ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.5ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 2, name: "nola willy", birthday: "2019-09-02", contact: "Sara Reynolds", phone: 7605551919, allergy: "none", daycare_id: 1, created_at: "2021-12-12 23:45:20", updated_at: "2021-12-12 23:45:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.61ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 1.1ms | Allocations: 2130)
+
+
