@@ -9,9 +9,9 @@ import Welcome from './components/Welcome'
 import DaycareFormContainer from './containers/DaycareFormContainer';
 import DaycareContainer from './containers/DaycareContainer';
 import ImageGallery from './components/ImageGallery';
+import AdminLogIn from './components/admincomp/AdminLogIn'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import AdminSignUp from './components/admincomp/AdminSignUp';
 
 class App extends Component {
   componentDidMount() {
@@ -24,7 +24,7 @@ class App extends Component {
       <Router>
         <NavBar />
         <Switch>
-          <Route exact path="/admin-signup" component={AdminSignUp}/>
+          <Route exact path="/admin-login" component={AdminLogIn}/>
           <Route exact path="/" component={Welcome}/>
           <Route exact path="/daycares/toddlers/new" component={DaycareFormContainer}/>
           <Route exact path="/toddlers" component={DaycareContainer}/>
