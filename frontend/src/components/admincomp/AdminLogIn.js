@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
-export default class AdminSignUp extends Component {
+class AdminLogIn extends Component {
     constructor() {
         super()
         this.state = {
@@ -37,3 +39,5 @@ export default class AdminSignUp extends Component {
         )
     }
 }
+
+export default withRouter(connect( null, { })(AdminLogIn))
