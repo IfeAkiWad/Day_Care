@@ -4,7 +4,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import { fetchDaycares } from './actions/daycareActions';
 import { fetchToddlers } from './actions/toddlerActions';
-import { fetchAdmins } from './actions/adminAction';
+import { fetchAdmins } from './actions/adminActions';
 import NavBar from './components/navcomp/NavBar';
 import Welcome from './components/Welcome'
 import DaycareFormContainer from './containers/DaycareFormContainer';
