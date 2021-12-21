@@ -1,12 +1,12 @@
 class AdminsController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+  # skip_before_action :authorized, only: [:create]
 
   # GET /admins
+
   def index
     @admins = Admin.all
-
-  #   render json: @admins
-  # end
+    render json: @admins
+  end
 
   # POST /admins
   def create

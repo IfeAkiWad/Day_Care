@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+    def new
+        # @admin = Admin.new
+    end
     
     def create
     @admin = Admin.find_by(username: session_params[:username])
@@ -38,6 +41,12 @@ class SessionsController < ApplicationController
     end
 
     private
+        def current_admin
+            if session[:admin_id]
+                @current_admin ||= Admin.find_by_id(session[:admin_id])
+            end
+        end 
+
         def session_params
             params.require(:admin).permit(:username, :password)
         end
