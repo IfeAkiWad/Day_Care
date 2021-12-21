@@ -26,7 +26,7 @@ class App extends Component {
       <Router>
         <NavBar />
         <Switch>
-          <Route exact path="/admin-login" component={AdminLogIn}/>
+          <Route exact path="/login" component={AdminLogIn}/>
           <Route exact path="/" component={Welcome}/>
           <Route exact path="/daycares/toddlers/new" component={DaycareFormContainer}/>
           <Route exact path="/toddlers" component={DaycareContainer}/>
