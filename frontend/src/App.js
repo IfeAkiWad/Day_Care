@@ -13,7 +13,7 @@ import ImageGallery from './components/ImageGallery';
 import AdminLogIn from './components/admincomp/AdminLogIn'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+// seeing if this commit will be reflected
 class App extends Component {
   componentDidMount() {
     this.props.fetchDaycares()

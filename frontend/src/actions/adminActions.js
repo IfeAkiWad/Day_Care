@@ -1,22 +1,15 @@
+
+
 export const fetchAdmins = () => {
     return (dispatch) => {
       dispatch({ type: "LOADING_ADMINS" });
       fetch("http://localhost:3000/admins")
         .then(response => response.json())
         .then((data) => {
-          dispatch({ type: "LOGIN_ADMINS", admins: data });
+          dispatch({ type: "LOGIN_ADMIN", admins: data });
         });
     };
   };
 
-  export const logInAdmin = () => {
-    return (dispatch) => {
-      dispatch({ type: "LOGIN_ADMINS" });
-      fetch("http://localhost:3000/admins")
-        .then(response => response.json())
-        .then((data) => {
-          dispatch({ type: "LOGIN_ADMINS", admins: data });
-        });
-    }
 
-  }
+ 
