@@ -33930,3 +33930,506 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 722)
 
 
+Started GET "/login" for ::1 at 2021-12-21 15:52:40 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 76)
+
+
+Started GET "/daycares" for ::1 at 2021-12-21 15:53:35 -0600
+Started GET "/toddlers" for ::1 at 2021-12-21 15:53:35 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ToddlersController#index as */*
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.3ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mDaycare Load (0.3ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.74ms)
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (22.71ms)
+Completed 200 OK in 103ms (Views: 41.4ms | ActiveRecord: 5.4ms | Allocations: 18351)
+
+
+Completed 200 OK in 101ms (Views: 81.4ms | ActiveRecord: 0.5ms | Allocations: 19578)
+
+
+Started GET "/daycares" for ::1 at 2021-12-21 15:54:11 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (1.6ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+Started GET "/toddlers" for ::1 at 2021-12-21 15:54:11 -0600
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (3.36ms)
+Processing by ToddlersController#index as */*
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 1.7ms | Allocations: 3376)
+
+
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.63ms)
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 2323)
+
+
+Started GET "/daycares" for ::1 at 2021-12-21 15:54:15 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.9ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+Started GET "/admins" for ::1 at 2021-12-21 15:54:15 -0600
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (4.35ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.2ms | Allocations: 3340)
+
+
+Started GET "/toddlers" for ::1 at 2021-12-21 15:54:15 -0600
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.31ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 2349)
+
+
+Processing by AdminsController#index as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/controllers/admins_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 1.9ms | Allocations: 6025)
+
+
+Started GET "/login" for ::1 at 2021-12-21 15:55:10 -0600
+Processing by SessionsController#new as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 25)
+
+
+Started GET "/daycares" for ::1 at 2021-12-21 15:55:25 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+Started GET "/toddlers" for ::1 at 2021-12-21 15:55:25 -0600
+[active_model_serializers]   [1m[36mToddler Load (1.6ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (6.99ms)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 1.8ms | Allocations: 4141)
+
+
+  [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.55ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 2330)
+
+
+Started GET "/admins" for ::1 at 2021-12-21 15:57:22 -0600
+Processing by AdminsController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/controllers/admins_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1224)
+
+
+Started GET "/toddlers" for ::1 at 2021-12-21 15:58:03 -0600
+Started GET "/daycares" for ::1 at 2021-12-21 15:58:03 -0600
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+Processing by DaycaresController#index as */*
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.51ms)
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 2549)
+
+
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (3.76ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 3302)
+
+
+Started GET "/daycares" for ::1 at 2021-12-21 15:58:18 -0600
+Started GET "/toddlers" for ::1 at 2021-12-21 15:58:18 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+Processing by ToddlersController#index as */*
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (7.18ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.5ms | Allocations: 3504)
+
+
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.54ms)
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 3822)
+
+
+Started GET "/toddlers" for ::1 at 2022-01-09 15:13:13 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ToddlersController#index as HTML
+  [1m[36mDaycare Load (0.7ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.5ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.56ms)
+Completed 200 OK in 47ms (Views: 14.8ms | ActiveRecord: 2.6ms | Allocations: 14337)
+
+
+Started GET "/toddlers" for ::1 at 2022-01-09 15:13:33 -0600
+Started GET "/daycares" for ::1 at 2022-01-09 15:13:33 -0600
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (1.37ms)
+Completed 200 OK in 9ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 3131)
+
+
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.6ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.5ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (12.34ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 1.1ms | Allocations: 5180)
+
+
+Started GET "/daycares" for ::1 at 2022-01-09 15:13:37 -0600
+Started GET "/toddlers" for ::1 at 2022-01-09 15:13:37 -0600
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.3ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+Processing by DaycaresController#index as */*
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mDaycare Load (0.3ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers]   [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (1.73ms)
+Completed 200 OK in 21ms (Views: 11.2ms | ActiveRecord: 0.6ms | Allocations: 3899)
+
+
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (11.08ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.6ms | Allocations: 4774)
+
+
+Started GET "/daycares" for ::1 at 2022-01-24 15:04:56 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:04:56 -0600
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.4ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.8ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+  [1m[36mToddler Load (0.8ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (1.02ms)
+Completed 200 OK in 65ms (Views: 16.9ms | ActiveRecord: 3.1ms | Allocations: 17412)
+
+
+[active_model_serializers]   [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (57.53ms)
+Completed 200 OK in 85ms (Views: 71.8ms | ActiveRecord: 1.0ms | Allocations: 21702)
+
+
+Started GET "/daycares" for ::1 at 2022-01-24 15:05:05 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:05:05 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.62ms)
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 3833)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (8.98ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.3ms | Allocations: 4889)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAdmins (20211128041008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "admins"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211128041008"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:03 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:03 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DaycaresController#index as */*
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.4ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+[active_model_serializers]   [1m[36mToddler Load (0.5ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (13.69ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 1.0ms | Allocations: 15489)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.42ms)
+Completed 200 OK in 22ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 14548)
+
+
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:06 -0600
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:06 -0600
+Processing by ToddlersController#index as */*
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+[active_model_serializers]   [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (5.56ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 4159)
+
+
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.36ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 4587)
+
+
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:17 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:17 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+Processing by ToddlersController#index as */*
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (5.49ms)
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 3079)
+
+
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.53ms)
+Completed 200 OK in 9ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 2785)
+
+
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:19 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:19 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (1.0ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+Processing by ToddlersController#index as */*
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mDaycare Load (0.4ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (3.51ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 1.2ms | Allocations: 4534)
+
+
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.67ms)
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 0.7ms | Allocations: 4711)
+
+
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:27 -0600
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:27 -0600
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (9.76ms)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.5ms | Allocations: 4940)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (2.27ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.3ms | Allocations: 4024)
+
+
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:32 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:32 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+Processing by ToddlersController#index as */*
+[active_model_serializers]   [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (3.36ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 2801)
+
+
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.79ms)
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 3687)
+
+
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:36 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:36 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+Processing by ToddlersController#index as */*
+[active_model_serializers]   [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (3.85ms)
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 3482)
+
+
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.88ms)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.4ms | Allocations: 3683)
+
+
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:43 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:43 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mToddler Load (0.3ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (7.71ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.6ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.4ms | Allocations: 3770)
+
+
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.5ms | Allocations: 4670)
+
+
+Started GET "/daycares" for ::1 at 2022-01-24 15:23:53 -0600
+Started GET "/toddlers" for ::1 at 2022-01-24 15:23:53 -0600
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.3ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.2ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+[active_model_serializers]   [1m[36mToddler Load (0.1ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+  [1m[36mToddler Load (0.4ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (6.1ms)
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.4ms | Allocations: 4440)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.65ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.6ms | Allocations: 3633)
+
+
+Started GET "/toddlers" for ::1 at 2022-01-24 15:30:48 -0600
+Started GET "/daycares" for ::1 at 2022-01-24 15:30:48 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ToddlersController#index as */*
+  [1m[36mDaycare Load (0.6ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares" LIMIT ?[0m  [["LIMIT", 1]]
+Processing by DaycaresController#index as */*
+  [1m[36mDaycare Load (0.1ms)[0m  [1m[34mSELECT "daycares".* FROM "daycares"[0m
+  ↳ app/controllers/toddlers_controller.rb:41:in `set_daycare'
+  [1m[36mToddler Load (0.6ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers"[0m
+  ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Daycare id: 1, name: "Sunny Day Care", address: "100 W 113th St. New York, NY 10026", created_at: "2021-10-11 02:43:25", updated_at: "2021-10-11 02:43:25">
+[active_model_serializers]   [1m[36mToddler Load (0.2ms)[0m  [1m[34mSELECT "toddlers".* FROM "toddlers" WHERE "toddlers"."daycare_id" = ?[0m  [["daycare_id", 1]]
+  ↳ app/controllers/toddlers_controller.rb:8:in `index'
+[active_model_serializers]   ↳ app/controllers/daycares_controller.rb:8:in `index'
+No serializer found for resource: #<Toddler id: 3, name: "Massimo Gandolfini", birthday: "2018-07-01", contact: "Jessica Smith", phone: 7605553499, allergy: "peanut", daycare_id: 1, created_at: "2021-12-12 23:46:06", updated_at: "2021-12-12 23:46:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Toddler::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 1.1ms | Allocations: 4931)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Daycare::ActiveRecord_Relation (2.49ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 4317)
+
+
